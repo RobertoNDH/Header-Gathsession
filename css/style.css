@@ -16,29 +16,134 @@ body {
     list-style: none;
     gap: 4.5em;
     align-items: center;
-    margin-bottom: 10em;
+    margin-bottom: 8em;
 
     li a {
         text-decoration: none;
-        color: white;
+    }
+    
+    li a:hover {
+        color:#DB2A6B;
     }
 
-    span {
-        color: #DB2A6B;
-    }
-
+    
     :nth-of-type(1) {
         margin-right: auto;
         font-size: 1.4em;
+        a {
+            color: white;
+        }
+        span {
+            color: #DB2A6B;
+        }
     }
 
     :nth-of-type(2), :nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6) {
         font-size: 0.8em;
+        a {
+            color: #ABABAB;
+        }
     }
 
-    :nth-of-type(2):active {
-        text-decoration: underline;
+    :nth-of-type(2) {
+        a {
+            color: white;
+        }
     }
+
+    :nth-of-type(6) {
+        margin-right: 7em;
+    }
+
+    :nth-of-type(2)::after {
+        content: "";
+        position: absolute;
+        left: 64%;
+        bottom: 92%; 
+        width: 3em; 
+        height: 0.4em; 
+        background-color:#DB2A6B;
+        border-radius: 4px;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main image"
+    "info image";
+}
+
+.main {
+    grid-area: main;
+
+    h1 {
+        font-size: 5.5em;
+        width: 75%;
+        margin-bottom: 0.4em;
+    }
+
+    p {
+        color:#ABABAB;
+        font-size: 1.5em;
+        width: 65%;
+        font-weight: 300;
+        margin-bottom: 1.5em;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        margin-bottom: 4em;
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        :first-child {
+            background-color: #DB2A6B;
+            padding: 1.2em 5em;
+            border-radius: 1.2em 1.2em 1.2em 0em;
+            font-size: 1.2em;
+        }
+
+        :first-child:hover {
+            background-color: white;
+            color: #DB2A6B;
+        }
+
+        :nth-of-type(2) {
+            font-size: 1.2em;
+            text-decoration: underline;
+        }
+
+        :nth-of-type(2):hover {
+            color: #DB2A6B;
+        }
+    }
+}
+
+.info {
+    grid-area: info;
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
+
+        img {
+            width: 35%;
+        }
+    }
+}
+
+.image {
+    grid-area: image;
 }
 
 
